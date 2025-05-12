@@ -1,4 +1,4 @@
-// Credit: Made on www.pixelart.com by Kelvin Ngor
+// Credit: Created by DokaJuno
 import WolfSprite from './wolf.png';
 import WolfFloppedSprite from './wolf-flopped.png';
 
