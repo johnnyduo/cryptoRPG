@@ -1,0 +1,35 @@
+.game-over__title {
+    display: flex;
+    justify-content: center;
+
+    padding: 32px 0;
+
+    font-size: 32px;
+}
+
+.game-over__player {
+    color: var(--blue);
+}
+
+.game-over__killer {
+    color: var(--orange);
+}
+
+.game-over__text {
+    justify-content: center;
+    text-align: center;
+
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.game-over__button {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    margin: 0 auto;
+    padding-bottom: 16px;
+}

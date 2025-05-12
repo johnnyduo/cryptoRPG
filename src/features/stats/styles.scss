@@ -1,0 +1,137 @@
+.stats__container {
+    justify-content: center;
+
+    transition: background 0.5s ease-in-out;
+
+    cursor: default;
+    user-select: none;
+}
+
+.stats__row--spacing {
+    padding-bottom: 15px;
+}
+
+.stats__text--spacing {
+    padding-right: 10px;
+    font-size: 15px;
+    font-family: 'Roboto Mono';
+}
+
+.stats__text--info {
+    color: var(--white);
+    font-size: 16px;
+    text-transform: none;
+    font-family: 'Roboto Mono';
+}
+
+.stats__text--level {
+    color: var(--purple);
+    font-size: 18px;
+}
+
+.stats__text--gold {
+    color: var(--orange);
+    font-size: 18px;
+}
+
+.stats__text--defence {
+    color: var(--purple);
+    font-size: 18px;
+}
+
+.stats__text--blank {
+    color: var(--text-color, black);
+}
+
+.stats__text--melee {
+    color: var(--light-red);
+    font-size: 14px;
+}
+
+.stats__text--ranged {
+    color: var(--green);
+    font-size: 14px;
+}
+
+.stats__text--magic {
+    color: var(--blue);
+    font-size: 14px;
+}
+
+.stats-column__spacing {
+    padding-left: 12px;
+}
+
+.stats-column__spacing--large {
+    padding-left: 24px;
+}
+
+.stats-bar__container {
+    width: 100px;
+    height: 20px;
+    position: relative;
+    border-radius: 7px;
+
+    .stats-bar__value {
+        height: 20px;
+        border-radius: 5px 0px 0px 4px;
+        position: absolute;
+        transition: width 1s ease-in-out;
+    }
+}
+
+.exp-bar__container {
+    background: var(--gray);
+    border: 1px solid purple;
+
+    .exp-bar__value {
+        background: purple;
+    }
+}
+
+.stats-hp-bar__container {
+    background: var(--red);
+    border: 1px solid var(--green);
+
+    .stats-hp-bar__value {
+        background: var(--green);
+    }
+}
+
+.stats-mana-bar__container {
+    background: var(--grey);
+    border: 1px solid var(--blue);
+
+    .stats-mana-bar__value {
+        background: var(--blue);
+    }
+}
+
+.stats-bar__text {
+    height: 20px;
+    font-size: 22px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+        1px 1px 0 #000;
+
+    font-weight: 500;
+
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    z-index: 1000;
+    left: 0;
+    right: 0;
+}
+
+.stats-health-bar__text {
+    color: lightgray;
+}
+
+.stats-exp-bar__text {
+    color: lightyellow;
+}
+
+.stats-mana-bar__text {
+    color: lightyellow;
+}
