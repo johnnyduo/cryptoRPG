@@ -32,6 +32,9 @@
         ]
     },
     "dependencies": {
+        "@reown/appkit": "^1.7.4",
+        "@reown/appkit-adapter-wagmi": "^1.7.4",
+        "@tanstack/react-query": "^5.76.0",
         "body-scroll-lock": "4.0.0-beta.0",
         "hammerjs": "^2.0.8",
         "lodash.clonedeep": "^4.5.0",
@@ -50,7 +53,9 @@
         "styled-components": "^5.1.0",
         "typeface-montserrat": "^1.1.0",
         "typeface-roboto": "^1.1.0",
-        "typeface-roboto-mono": "^1.1.0"
+        "typeface-roboto-mono": "^1.1.0",
+        "viem": "^2.29.2",
+        "wagmi": "^2.15.2"
     },
     "devDependencies": {
         "@vite-pwa/assets-generator": "^0.2.6",

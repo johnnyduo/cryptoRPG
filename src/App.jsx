@@ -2,6 +2,44 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { isMobile } from 'react-device-detect';
 import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
+import { createAppKit } from '@reown/appkit/react';
+import { WagmiProvider } from 'wagmi';
+import { arbitrum, mainnet } from '@reown/appkit/networks';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { WagmiAdapter } from '@reown/appkit-adapter-wagmi';
+
+const queryClient = new QueryClient();
+const projectId = 'YOUR_PROJECT_ID';
+const metadata = {
+    name: 'React RPG',
+    description: 'A Web3-enabled RPG game',
+    url: 'https://example.com',
+    icons: ['https://avatars.githubusercontent.com/u/179229932']
+};
+const networks = [mainnet, arbitrum];
+const wagmiAdapter = new WagmiAdapter({
+    networks,
+    projectId,
+    ssr: true
+});
+
+createAppKit({
+    adapters: [wagmiAdapter],
+    networks,
+    projectId,
+    metadata,
+    features: {
+        analytics: true
+    }
+});
+
+export function AppKitProvider({ children }) {
+    return (
+        <WagmiProvider config={wagmiAdapter.wagmiConfig}>
+            <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+        </WagmiProvider>
+    );
+}
 
 import DialogManager from './features/dialog-manager';
 import FloorCounter from './components/floor-counter';
@@ -13,7 +51,6 @@ import useGameViewportScaling from './features/app-state/actions/use-game-viewpo
 import Spellbook from './features/spellbook';
 import Tutorial from './features/tutorial';
 import Abilities from './features/abilities';
-
 import JournalSide from './components/journal-side';
 
 const App = ({ appState, world, dialog }) => {
@@ -48,7 +85,7 @@ const App = ({ appState, world, dialog }) => {
 
     if (sideMenu) {
         return (
-            <>
+            <AppKitProvider>
                 <div className={`centered flex-row`}>
                     <JournalSide disabled={disableJournal} />
                     <div className={`centered ${sideMenu ? 'flex-row' : 'flex-column'}`}>
@@ -76,12 +113,12 @@ const App = ({ appState, world, dialog }) => {
                     </div>
                 </div>
                 {showFooter && <Footer />}
-            </>
+            </AppKitProvider>
         );
     }
 
     return (
-        <>
+        <AppKitProvider>
             <div className={`centered flex-row`}>
                 <div
                     style={{
@@ -117,7 +154,7 @@ const App = ({ appState, world, dialog }) => {
                 </div>
             </div>
             {showFooter && <Footer />}
-        </>
+        </AppKitProvider>
     );
 };
 
