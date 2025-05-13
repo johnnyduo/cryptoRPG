@@ -462,6 +462,20 @@ const journalReducer = (state = initialState, { type, payload }) => {
             return newState;
         }
 
+        case 'GET_CRPG_TOKEN': {
+            newState = cloneDeep(state);
+            newState.entries.push({
+                key: uuidv4(),
+                entry: (
+                    <p key={uuidv4()}>
+                        You gained {colourise(payload, 'crpg-token')} CRPG tokens!
+                    </p>
+                ),
+            });
+
+            return newState;
+        }
+
         case 'SET_JOURNAL_SCROLLING':
             newState = cloneDeep(state);
             newState.scroll = payload;

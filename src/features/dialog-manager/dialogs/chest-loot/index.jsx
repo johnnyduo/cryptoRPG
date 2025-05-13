@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import { connect } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
 import { ethers, BrowserProvider } from 'ethers';
 
 import Button from '../../../../components/button';
@@ -21,6 +21,8 @@ const ChestLoot = ({ dialog, pickupItem, openChest, closeChestDialog }) => {
     const [tokenReward, setTokenReward] = useState(0);
     const [rewardCalculated, setRewardCalculated] = useState(false);
     const [bonusAmount, setBonusAmount] = useState(0);
+
+    const dispatch = useDispatch();
 
     // Contract address from environment variable or fallback
     const contractAddress = import.meta.env.VITE_CRPG_TOKEN_ADDRESS || "0x1ce14fD9dd6678fC3d192f02207d6ff999B04037";
@@ -111,6 +113,9 @@ const ChestLoot = ({ dialog, pickupItem, openChest, closeChestDialog }) => {
 
             setIsClaimed(true);
             alert(`${tokenReward} CRPG tokens successfully claimed!`);
+
+            // Dispatch action to update journal
+            dispatch({ type: 'GET_CRPG_TOKEN', payload: tokenReward });
         } catch (error) {
             console.error('Error claiming tokens:', error);
             setClaimError(error.message || 'Failed to claim tokens');
