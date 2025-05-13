@@ -12,17 +12,23 @@ const GameMusic = ({ sideMenu, gameSoundEnabled, setGameSound }) => {
     const [gameMusic, setGameMusic] = useState(null);
 
     useEffect(() => {
-        window.addEventListener('mousedown', handleKeyPress);
-        window.addEventListener('keydown', handleKeyPress);
-        window.addEventListener('focus', handleFocus);
-        // window.addEventListener('blur', handleBlur);
-        return () => {
-            window.removeEventListener('mousedown', handleKeyPress);
-            window.removeEventListener('keydown', handleKeyPress);
-            window.removeEventListener('focus', handleFocus);
-            // window.removeEventListener('blur', handleBlur);
+        const handleUserInteraction = () => {
+            if (!gameMusic && gameSoundEnabled()) {
+                setGameMusic(true);
+            }
+            // Remove the event listeners after the first interaction
+            window.removeEventListener('mousedown', handleUserInteraction);
+            window.removeEventListener('keydown', handleUserInteraction);
         };
-    }, []);
+
+        window.addEventListener('mousedown', handleUserInteraction);
+        window.addEventListener('keydown', handleUserInteraction);
+
+        return () => {
+            window.removeEventListener('mousedown', handleUserInteraction);
+            window.removeEventListener('keydown', handleUserInteraction);
+        };
+    }, [gameMusic, gameSoundEnabled]);
 
     function handleKeyPress() {
         // we have to load music only have user has clicked or pressed a key
