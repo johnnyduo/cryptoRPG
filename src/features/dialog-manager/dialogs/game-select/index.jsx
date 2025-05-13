@@ -16,11 +16,11 @@ const GameSelect = ({ mainGameDialog, endlessGameDialog, loadGame }) => {
             <span className="flex-row game-select__title align-center">
                 <img
                     src="/logo-no-bg.png"
-                    alt="cryptoRPG: 2e"
+                    alt="cryptoRPG"
                     style={{ width: 64, height: 64, marginRight: 8 }}
                 />
 
-                {'cryptoRPG: 2e'}
+                {'cryptoRPG'}
             </span>
 
             <span className="flex-column game-select__text">
