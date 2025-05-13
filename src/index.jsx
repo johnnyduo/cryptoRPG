@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 
@@ -40,4 +40,7 @@ class ConnectedApp extends Component {
     }
 }
 
-ReactDOM.render(<ConnectedApp />, document.getElementById('react-rpg'));
+const container = document.getElementById('react-rpg');
+const root = createRoot(container);
+
+root.render(<ConnectedApp />);
