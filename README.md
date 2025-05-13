@@ -1,27 +1,27 @@
-# React RPG
+# cryptoRPG
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-React RPG is an open-source RPG made with React and Redux. Experience the 2D turn-based, dungeon crawler that comes with two game modes: Story and Endless. Story mode will lead you through a short story while introducing you to the most powerful creatures. In Endless mode, a unique challenge waits around every corner, as no two maps are the same.
+cryptoRPG is an open-source RPG made with React and Redux. Experience the 2D turn-based, dungeon crawler that comes with two game modes: Story and Endless. Story mode will lead you through a short story while introducing you to the most powerful creatures. In Endless mode, a unique challenge waits around every corner, as no two maps are the same.
 
 Play now at [react-rpg.com](https://react-rpg.com)!
 
-There is a [React Native webview wrapper](https://github.com/ASteinheiser/ReactRPGNative) for React RPG, however it's no longer available via Google Play or App Store. If you would like to download React RPG for your mobile device, I recommend downloading the Progressive Web App ([PWA](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Installing)).
+There is a [React Native webview wrapper](https://github.com/ASteinheiser/ReactRPGNative) for cryptoRPG, however it's no longer available via Google Play or App Store. If you would like to download cryptoRPG for your mobile device, I recommend downloading the Progressive Web App ([PWA](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Installing)).
 
-### Read more about React RPG
+### Read more about cryptoRPG
 - [Medium: Making an RPG with React + Redux](https://medium.com/@andrewsteinheiser/making-an-rpg-with-react-redux-dcfffdb06797)
 - [Made With React Native Interview](http://madewithreactnative.com/react-rpg/)
-- [Medium: The Future of React RPG](https://medium.com/@andrewsteinheiser/the-future-of-react-rpg-be257c950eee)
+- [Medium: The Future of cryptoRPG](https://medium.com/@andrewsteinheiser/the-future-of-react-rpg-be257c950eee)
 
-# React RPG: 2e (Major Update)
+# cryptoRPG: 2e (Major Update)
 
 During 2020 to 2022, a fork was made called [roll-for-reaction](https://github.com/Matteas-Eden/roll-for-reaction), which "aimed to enhance the systems already present in the base game by modifying and adding elements to lightly emulate the popular tabletop role-playing game _Dungeons and Dragons: 5th Edition_".
 
 As a personal fan of DnD:5e, I thought this expansion was wonderful and decided that the official game should merge with this fork, giving way to a new (tongue-in-cheek) era dubbed:
 
-### React RPG: 2nd Edition
+### cryptoRPG: 2nd Edition
 
 ![check][checkmark] DnD Classes and Races
  - Classes: Fighter, Ranger and Wizard

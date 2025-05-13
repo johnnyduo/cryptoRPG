@@ -19,8 +19,8 @@ export default defineConfig({
             registerType: 'autoUpdate',
             includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg'],
             manifest: {
-                name: 'React RPG: 2e',
-                short_name: 'React RPG: 2e',
+                name: 'cryptoRPG: 2e',
+                short_name: 'cryptoRPG: 2e',
                 theme_color: '#0f0f0f',
                 icons: [
                     {
