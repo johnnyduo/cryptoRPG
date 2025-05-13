@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { connect } from 'react-redux';
 
 import Button from '../../../../components/button';
@@ -11,6 +11,23 @@ import loadGame from '../../actions/load-game';
 import './styles.scss';
 
 const GameSelect = ({ mainGameDialog, endlessGameDialog, loadGame }) => {
+    const greetings = [
+        'Welcome, adventurer!',
+        'Greetings, warrior!',
+        'Hello, explorer!',
+        'Welcome, hero!',
+        'Greetings, champion!',
+        'Hello, traveler!',
+        'Welcome, seeker!',
+        'Greetings, legend!',
+        'Hello, brave one!',
+        'Welcome, hero of the chain!'
+    ];
+
+    const randomGreeting = useMemo(() => {
+        return greetings[Math.floor(Math.random() * greetings.length)];
+    }, []);
+
     return (
         <Dialog>
             <span className="flex-row game-select__title align-center">
@@ -24,7 +41,7 @@ const GameSelect = ({ mainGameDialog, endlessGameDialog, loadGame }) => {
             </span>
 
             <span className="flex-column game-select__text">
-                {'Greetings, Traveler...'}
+                {randomGreeting}
             </span>
 
             <div className="game-select__flame--1">
